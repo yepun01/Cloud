@@ -1,0 +1,32 @@
+{
+  "hosting": {
+    "public": "web/public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/api/pixel",
+        "function": "placePixel"
+      },
+      {
+        "source": "/api/canvas",
+        "function": "getCanvas"
+      },
+      {
+        "source": "/api/discord",
+        "function": "discordInteraction"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "functions": {
+    "source": "functions",
+    "runtime": "nodejs20"
+  }
+}

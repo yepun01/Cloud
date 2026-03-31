@@ -1,0 +1,28 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Pixels: read-only from client, writes only via backend (Cloud Functions)
+    match /pixels/{pixelId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Canvas metadata: read-only
+    match /canvas/{canvasId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // Users: authenticated users can read their own data
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow write: if false;
+    }
+
+    // Default: deny all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
