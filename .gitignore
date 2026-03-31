@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Firebase
+.firebase/
+.firebaserc.bak
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build
+dist/
+build/
+
+# Generated config (synced from shared/constants.json)
+web/public/constants.js
+functions/constants.json
+
+# Coverage
+coverage/
+
+# Secrets
+*.key
+*.pem
+
+# Local dev artifacts (team coordination, agent memory)
+.claude/
