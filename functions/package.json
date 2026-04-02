@@ -1,0 +1,24 @@
+{
+  "name": "pixelboard-functions",
+  "version": "1.0.0",
+  "description": "PixelBoard Cloud Functions — serverless backend for collaborative pixel canvas",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "npx @google-cloud/functions-framework --target=placePixel --port=8080",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@google-cloud/firestore": "^7.11.0",
+    "@google-cloud/pubsub": "^4.9.0",
+    "@google-cloud/storage": "^7.15.0",
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^7.0.0",
+    "tweetnacl": "^1.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
