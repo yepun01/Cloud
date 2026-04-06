@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  min-height: 100vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #16213e;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+#user-info {
+  font-family: monospace;
+  font-size: 0.85rem;
+  color: #9bd;
+  background: #0d1a30;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  user-select: text;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+#canvas-container {
+  border: 2px solid #333;
+  line-height: 0;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+  background: #0d0d18;
+  position: relative;
+}
+
+#pixel-canvas {
+  image-rendering: pixelated;
+  cursor: crosshair;
+  transition: transform 80ms ease-out;
+  display: block;
+}
+
+#toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 180px;
+}
+
+#palette {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.color-swatch {
+  width: 36px;
+  height: 36px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 100ms;
+}
+
+.color-swatch:hover {
+  transform: scale(1.15);
+}
+
+.color-swatch.selected {
+  border-color: #fff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+}
+
+#coordinates {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+#cooldown-display {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-weight: 600;
+  min-height: 1.5em;
+}
+
+#cooldown-display.active {
+  color: #ff5c5c;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: #777;
+  line-height: 1.5;
+  border-top: 1px solid #333;
+  padding-top: 0.8rem;
+}
+
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  z-index: 1000;
+  animation: slideUp 200ms ease-out;
+}
+
+.toast-info { background: #2a4a7f; color: #eee; }
+.toast-warn { background: #7f5a1a; color: #fff; }
+.toast-error { background: #7f1a1a; color: #fff; }
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translate(-50%, 20px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}

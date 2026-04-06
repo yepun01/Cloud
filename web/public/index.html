@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelBoard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PixelBoard</h1>
+    <div id="user-info" title="Anonymous user ID">Connecting...</div>
+  </header>
+
+  <main>
+    <div id="canvas-container">
+      <canvas id="pixel-canvas" width="500" height="500"></canvas>
+    </div>
+
+    <aside id="toolbar">
+      <div id="palette"></div>
+      <div id="coordinates">
+        <span id="coord-display">x: — y: —</span>
+      </div>
+      <div id="cooldown-display"></div>
+      <p class="hint">Click: place pixel<br>Wheel: zoom<br>Shift + drag: pan</p>
+    </aside>
+  </main>
+
+  <script src="constants.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
